@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <title>Document</title>
-</head>
-<body>
-    <iframe src="https://m.taobao.com" frameborder="0" class="ifm"></iframe>
-    <iframe src="" frameborder="0" class="ifm2">
-<html lang="zh-Hant-TW"><head>
+    <script>
+    window.onload=function(){
+        var html=`<html lang="zh-Hant-TW"><head>
         <title>博客來電子書櫃</title>
         <meta property="og:site_name" content="博客來">
         <meta property="og:type" content="product">
@@ -253,7 +251,15 @@
 <script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1700571533513678");fbq("track","PageView");fbq("track","ViewContent");</script>
 <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1700571533513678&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
 
-</body></html>
+</body></html>`;
+document.querySelector('.ifm2').innerHTML=html;
+    }
+    </script>
+</head>
+<body>
+    <iframe src="https://m.taobao.com" frameborder="0" class="ifm"></iframe>
+    <iframe src="" frameborder="0" class="ifm2">
+
     </iframe>
 </body>
 </html>
