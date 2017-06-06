@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=3.0">
     <title>Document</title>
     <script>
     window.onload=function(){
@@ -253,6 +253,7 @@
 
 </body></html>`;
 document.querySelector('.ifm2').contentWindow.document.documentElement.innerHTML=html;
+        document.querySelector('head meta[name=viewport]').setAttribute('content','width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0');
     }
     </script>
 </head>
