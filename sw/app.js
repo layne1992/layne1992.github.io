@@ -2,7 +2,7 @@
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw/sw.js', { scope: '/sw/' }).then(function(reg) {
-
+    
     if(reg.installing) {
       console.log('Service worker installing');
     } else if(reg.waiting) {
@@ -10,7 +10,7 @@ if ('serviceWorker' in navigator) {
     } else if(reg.active) {
       console.log('Service worker active');
     }
-
+    reg.update();
   }).catch(function(error) {
     // registration failed
     console.log('Registration failed with ' + error);
