@@ -15,7 +15,10 @@
 //     })
 //   );
 // });
+self.addEventListener("install", event => {
+  self.skipWaiting();
 
+});
 this.addEventListener('fetch', function(event) {
   console.info(event.request);
 //   event.respondWith(caches.match(event.request).catch(function() {
