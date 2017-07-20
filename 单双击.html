@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=3.0">
+    <style type="text/css">
+    #touch,body,html{
+        width: 100%;
+        height: 100%;
+        background: #0fd;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    </style>
+</head>
+<body>
+
+<div id="touch">
+点我
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+function $(ele) {
+    return document.getElementById(ele);
+}
+    $('touch').addEventListener('touchstart',touch, false);
+    $('touch').addEventListener('touchmove',touch, false);
+    $('touch').addEventListener('touchend',touch, false);
+
+    touchstartTime = tap1 = tap2 = 0;
+
+ function touch (event){
+        var event = event || window.event;
+
+        switch(event.type){
+            case "touchstart":
+                touchstartTime = event.touches.length == 1 ?  new Date() :0;
+                break;
+            case "touchend":
+                if(new Date()-touchstartTime<200){
+                    if(!tap1 || new Date()-tap1>300){
+                        tap1 = new Date();
+                        touchTimer=setTimeout(function(){
+                            //单击
+                             $('touch').innerHTML='单 击!';
+                        },300);
+                    }else if(new Date() - tap1 < 500){  //双击
+                        clearTimeout(touchTimer);
+                        $('touch').innerHTML = '双 击!';
+                    }
+                }
+                break;
+            case "touchmove":
+                return;
+                break;
+        }
+
+}
+
+
+</script>
