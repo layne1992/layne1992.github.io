@@ -32,7 +32,7 @@ function $(ele) {
     $('touch').addEventListener('touchmove',touch, false);
     $('touch').addEventListener('touchend',touch, false);
 
-    touchstartTime = tap1 = tap2 = 0;
+    touchstartTime = tap1 = 0;
 
  function touch (event){
         var event = event || window.event;
@@ -43,7 +43,7 @@ function $(ele) {
                 break;
             case "touchend":
                 if(new Date()-touchstartTime<200){
-                    if(!tap1 || new Date()-tap1>300){
+                    if(tap1!="pan" || !tap1 || new Date()-tap1>300){
                         tap1 = new Date();
                         touchTimer=setTimeout(function(){
                             //单击
@@ -56,7 +56,7 @@ function $(ele) {
                 }
                 break;
             case "touchmove":
-                tap1=0;
+                tap1 = 'pan';
                 $('touch').innerHTML = '拖动!';
                 return;
                 break;
