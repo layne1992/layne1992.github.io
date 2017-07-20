@@ -57,6 +57,7 @@ function $(ele) {
                 break;
             case "touchmove":
                 touchstartTime=0;
+                clearTimeout(touchTimer);
                 $('touch').innerHTML = '拖动!';
                 return;
                 break;
