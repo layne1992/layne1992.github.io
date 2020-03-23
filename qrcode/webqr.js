@@ -153,8 +153,8 @@ function setwebcam2(options)
         n.mediaDevices.getUserMedia({video: options, audio: false}).
             then(function(stream){
                 success(stream);
-            }).catch(function(error){
-                error(error)
+            }).catch(function(err){
+                error(err)
             });
     }
     else
